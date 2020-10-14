@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- HOME -->
+<section class="home-section section-hero overlay bg-image"  style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+   <div class="container">
+      <div class="row align-items-center justify-content-center">
+         <div class="col-md-12">
+            <div class="mb-5 text-center">
+               <h1 class="text-white font-weight-bold"> Find your  job in our  career website</h1>
+            </div>
+            <form id="job-main-form" method="get" action="#" class="search-jobs-form">
+               <div class="row mb-5">
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                     <input type="text"  id="title" name="title" class="form-control form-control-lg" placeholder=" Software Engineer ... ">
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                     <input    type="text" id="job_location" name="job_location" class="form-control form-control-lg" placeholder="Dhaka,Bangladesh">
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                     <select id="employment_status" name="employment_status" class="form-control">
+                        <option>Part Time</option>
+                        <option>Full Time</option>
+                        <option>Freelance</option>
+                     </select>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                     <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="site-section">
+   <div class="container">
+      <div class="row mb-5 justify-content-center">
+         <div class="col-md-7 text-center">
+            <h2 class="section-title mb-2">We have found <span class="accent">{{ jobs.count }}</span> jobs. Would you maybe consider these? </h2>
+         </div>
+         <div class = 'container'>
+            <div class="row">
+         <div class="col-md-3">
+            <div class="card mb-3">
+               <img class="card-img-top" src="https://images.pexels.com/photos/3861961/pexels-photo-3861961.jpeg" alt="{{ listing.keywords }}">
+               <div class="card-body">
+                  <h5 class="card-title">best paying wall street jobs post covid 19</h5>
+               </div>
+            </div>
+            <!--          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Apply now!</button>-->
+            <a href="https://afflat3d1.com/lnk.asp?o=11992&c=918273&a=242672&k=0&l=12220&s1=job_listing_site" target="_blank" class="btn btn-primary btn-block">Apply NOW!</a>
+         </div>
+         <div class="col-md-3">
+            <div class="card mb-3">
+               <img class="card-img-top" src="https://images.pexels.com/photos/842554/pexels-photo-842554.jpeg" alt="{{ listing.keywords }}">
+               <div class="card-body">
+                  <h6 class="text-secondary">Would you like to work in a construction company?</h6>
+               </div>
+            </div>
+            <!--          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Apply now!</button>-->
+            <a href="https://www.mb103.com/lnk.asp?o=11723&c=918277&a=242672&k=58230D3B609420DCB348037278F61846&l=11860&s1=job_listing_site" target="_blank" class="btn btn-primary btn-block">Apply NOW!</a>
+         </div>
+         <div class="col-md-3">
+            <div class="card mb-3">
+               <img class="card-img-top" src="https://thumbs.gfycat.com/DecimalThreadbareGemsbok-size_restricted.gif" alt="{{ listing.keywords }}">
+               <div class="card-body">
+                  <h5 class="card-title">List of jobs in real estate. No degree needed!</h5>
+               </div>
+            </div>
+            <!--          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Apply now!</button>-->
+            <a href="https://www.mb103.com/lnk.asp?o=7554&c=918277&a=242672&k=0&l=6266&s1=job_listing_site" target="_blank" class="btn btn-primary btn-block">Apply NOW!</a>
+         </div>
+         <div class="col-md-3">
+            <div class="card mb-3">
+               <img class="card-img-top" src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg" alt="{{ listing.keywords }}">
+               <div class="card-body">
+                  <h5 class="card-title">instant hire jobs. Good pay packages!</h5>
+               </div>
+            </div>
+            <!--          <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Apply now!</button>-->
+            <a href="https://afflat3d1.com/lnk.asp?o=9831&c=918277&a=242672&k=0&l=9510&s1=job_listing_site"  target="_blank" class="btn btn-primary btn-block">Apply NOW!</a>
+         </div>
+      </div>
+</div>
+
+      </div>
+      {% for job in jobs %}
+      <div class="mb-5">
+         <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+            <div class="col-md-2">
+               <a  href=""><img class="img-fluid" src="{% static 'images/featured-listing-2.jpg' %}" alt="image" ></a>
+            </div>
+            <div class="col-md-4">
+               <span class="badge badge-primary px-2 py-1 mb-3">
+               {{ job.employment_status }}
+               </span>
+               <h2><a href="{% url 'jobs:job-single' job.id %}">{{ job.title }}</a> </h2>
+               <p class="meta">Publisher: <strong>{{ job.user.first_name }} {{ job.user.last_name }}</strong> In: <strong>{{ job.category }}</strong></p>
+            </div>
+            <div class="col-md-3 text-left">
+               <h3>{{ job.job_location }}</h3>
+               <span class="meta"></span>
+            </div>
+            <div class="col-md-3 text-md-right">
+               <strong class="text-black">{{ job.Salary }}</strong>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</section>
+{% endblock %}

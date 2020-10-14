@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- HOME -->
+<section class="home-section section-hero inner-page overlay bg-image"
+   style="background-image: url('{% static 'images/hero_1.jpg' %}');"
+   >
+   <div class="container">
+      <div class="row align-items-center justify-content-center">
+         <div class="col-md-12">
+            <div class="mb-5 text-center">
+               <h1 class="text-white font-weight-bold">Our Services</h1>
+               <p>Find your dream jobs in our powerful career website .</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="site-section services-section bg-light block__62849" id="next-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=9831&c=918277&a=242672&k=0&l=9510&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
+               <h3>Design Strategy</h3>
+               <p>{{ md_service1 }}</p>
+            </a>
+         </div>
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=20487&c=918277&a=242672&k=0&l=21424&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-plane d-block"></span></span>
+               <h3>Marketing Strategy</h3>
+               <p>{{ md_service2 }}.</p>
+            </a>
+         </div>
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=19639&c=918273&a=242672&k=0&l=20596&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-laptop d-block"></span></span>
+               <h3>Web Design</h3>
+               <p>{{ md_service3 }}</p>
+            </a>
+         </div>
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=8016&c=918277&a=242672&k=7FCB92EA62E1512FF276756492A6457A&l=6728&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-search d-block"></span></span>
+               <h3>Search Engine Results</h3>
+               <p>{{ md_service4 }}</p>
+            </a>
+         </div>
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=8159&c=918277&a=242672&k=1C4EF169484046426DE127B8156D1ABB&l=6871&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-paper-plane d-block"></span></span>
+               <h3>Market Leading </h3>
+               <p>{{ md_service5 }}</p>
+            </a>
+         </div>
+         <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="https://afflat3d1.com/lnk.asp?o=8557&c=918277&a=242672&k=0&l=7269&s1=job_listing_site" class="block__16443 text-center d-block">
+               <span class="custom-icon mx-auto"><span class="icon-plug d-block"></span></span>
+               <h3>Pixel Perfect Design</h3>
+               <p class="d-sm-block">{{ md_service6 }}</p>
+            </a>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="bg-white pt-5 testimony-full">
+   <div class="owl-carousel single-carousel">
+   </div>
+</section>
+{% endblock  %}
